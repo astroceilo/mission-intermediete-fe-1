@@ -1,0 +1,47 @@
+@import "tailwindcss";
+@import "./assets/theme.css";
+
+:root {
+  background-color: rgba(255, 253, 243, 1);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 110.00000000000001%;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 110.00000000000001%;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 110.00000000000001%;
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 120%;
+}
+
+h5 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+}
+
+h6 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 120%;
+}
