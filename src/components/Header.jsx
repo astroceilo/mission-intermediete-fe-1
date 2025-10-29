@@ -1,143 +1,125 @@
 import logo from "../assets/images/logo.png";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <header className="bg-white sticky top-0 z-30">
-      <div className="mx-auto max-w-[1440px] px-6 py-4 md:px-16 md:py-3 xl:px-[120px]">
-        <div className="flex h-20 items-center justify-between">
-          {/* Logo */}
-          <div className="flex-1 md:flex md:items-center md:gap-12">
-            <a
-              className="cursor-pointer block text-teal-600 dark:text-teal-300"
-              href="/"
-            >
-              <span className="sr-only">Home</span>
-              <img
-                src={logo}
-                alt="Videobelajar Logo"
-                className="w-[152px] h-[42px] md:w-[237px] md:h-14 object-contain"
-              />
-            </a>
-          </div>
-          {/* End Logo */}
+    <nav className="bg-white fixed w-full z-20 top-0 start-0 border-y border-x-0 border-other-border">
+      <div className="max-w-7xl flex items-center justify-between mx-auto py-3 px-4 gap-4 md:px-10 md:gap-6 xl:px-[120px] xl:gap-9">
+        {/* Logo */}
+        <Link
+          to="/"
+          className="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <span className="sr-only">Home</span>
+          <img
+            src={logo}
+            className="w-[152px] h-[42px] md:w-[237px] md:h-14 object-contain"
+            alt="Videobelajar Logo"
+          />
+        </Link>
+        {/* End Logo */}
 
-          <div className="sm:flex sm:items-center sm:gap-6">
-            {/* Menu Item */}
-            <nav aria-label="Global" className="hidden sm:block">
-              <ul className="flex items-center gap-6 text-sm">
-                <li>
-                  <a
-                    className="text-text-dark-secondary hover:text-text-dark-primary font-medium text-base transition-colors duration-300"
-                    href="#categories"
-                  >
-                    Kategori
-                  </a>
-                </li>
-              </ul>
-            </nav>
-            {/* End Menu Item */}
+        {/* Hamburger */}
+        <button
+          data-collapse-toggle="navbar-hamburger"
+          type="button"
+          className="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+          aria-controls="navbar-hamburger"
+          aria-expanded="false"
+        >
+          <span className="sr-only">Open main menu</span>
+          <svg
+            className="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+        </button>
+        {/* End Hamburger */}
 
-            <div className="flex items-center gap-4">
-              {/* Login & Register */}
-              <div id="guest-nav" className="hidden sm:flex sm:gap-4">
-                <a
-                  className="px-5 py-2.5 rounded-[10px] flex justify-center items-center text-base font-bold text-white hover:text-primary bg-primary hover:bg-primary-100 border border-primary hover:border-primary-100 transition-colors duration-300"
-                  href="../pages/auth/login.html"
+        {/* Menu Hamburger */}
+        <div
+          className="hidden w-full absolute top-full left-0 right-0 z-20 bg-white/80 backdrop-blur-md rounded-b-lg shadow-md"
+          id="navbar-hamburger"
+        >
+          <ul className="flex flex-col font-medium">
+            <li className=" border-b border-other-border">
+              <Link
+                to="#"
+                className="block py-2 px-3 md:p-0 text-text-dark-secondary hover:text-text-dark-primary font-medium text-base transition-colors duration-300"
+              >
+                Kategori
+              </Link>
+            </li>
+            <div className="flex flex-col items-stretch gap-4 px-3 py-3">
+              <li>
+                <Link
+                  to="/login"
+                  className="block py-2 px-3 md:p-0 text-white hover:text-primary bg-primary hover:bg-primary-100 focus:ring-4 focus:outline-none focus:ring-primary-400 font-bold rounded-lg text-base text-center transition-colors duration-300 cursor-pointer"
                 >
                   Login
-                </a>
-                <a
-                  className="px-5 py-2.5 rounded-[10px] flex justify-center items-center text-base font-bold text-primary hover:text-white bg-white hover:bg-primary border border-primary transition-colors duration-300"
-                  href="../pages/auth/register.html"
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/register"
+                  className="block py-2 px-3 md:p-0 text-primary hover:text-white hover:bg-primary border border-primary focus:ring-4 focus:outline-none focus:ring-primary-400 font-bold rounded-lg text-base text-center transition-colors duration-300 cursor-pointer"
                 >
                   Register
-                </a>
-              </div>
-              {/* End Login & Register */}
+                </Link>
+              </li>
             </div>
-          </div>
+          </ul>
+        </div>
+        {/* End Menu Hamburger */}
 
-          {/* Hamburger */}
-          <div>
-            <button
-              id="hamburger-btn"
-              className="sm:hidden w-10 h-10 flex items-center justify-center"
+        <div className="hidden md:flex md:items-center md:gap-6">
+          {/* Button Login + Register */}
+          <div className="flex item-center gap-4 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <Link
+              to="/login"
+              className="text-white hover:text-primary bg-primary hover:bg-primary-100 focus:ring-4 focus:outline-none focus:ring-primary-400 font-bold rounded-lg text-base px-4 py-2 text-center transition-colors duration-300 cursor-pointer"
             >
-              {/* Icon Hamburger */}
-              <svg
-                id="icon-hamburger"
-                className="w-8 h-8 text-gray-800"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-
-              {/* Icon X */}
-              <svg
-                id="icon-close"
-                className="w-8 h-8 text-gray-800 hidden"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-
-            {/* Mobile Menu */}
-            <div
-              id="mobile-menu"
-              className="absolute top-full left-0 right-0 z-20 bg-white/80 backdrop-blur-md flex flex-col px-6 py-4 transform -translate-y-full opacity-0 pointer-events-none transition-all duration-500 ease-in-out sm:hidden shadow-md"
+              Login
+            </Link>
+            <Link
+              to="/register"
+              className="text-primary hover:text-white hover:bg-primary border border-primary focus:ring-4 focus:outline-none focus:ring-primary-400 font-bold rounded-lg text-base px-4 py-2 text-center transition-colors duration-300 cursor-pointer"
             >
-              {/* Nav Item */}
-              <ul className="flex flex-col gap-6 text-lg font-medium">
-                <li>
-                  <a
-                    href="#"
-                    className="text-gray-600 hover:text-[rgba(62,207,76,1)]"
-                  >
-                    Kategori
-                  </a>
-                </li>
-              </ul>
-              {/* End Nav Item */}
-
-              {/* Buttons */}
-              <div className="flex gap-4 mt-8 w-full">
-                <a
-                  className="flex-1 rounded-xl bg-[rgba(62,207,76,1)] px-4 py-3 text-center text-white hover:bg-green-600"
-                  href="../pages/auth/login.html"
-                >
-                  Login
-                </a>
-                <a
-                  className="flex-1 rounded-xl border border-[rgba(62,207,76,1)] px-4 py-3 text-center text-[rgba(62,207,76,1)] hover:bg-[rgba(62,207,76,1)] hover:text-white"
-                  href="../pages/auth/register.html"
-                >
-                  Register
-                </a>
-              </div>
-              {/* End Buttons */}
-            </div>
-            {/* End Mobile Menu */}
+              Register
+            </Link>
           </div>
-          {/* End Hamburger */}
+          {/* End Button Login + Register */}
+
+          {/* Navbar */}
+          <div
+            className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+            id="navbar-sticky"
+          >
+            <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+              <li>
+                <Link
+                  to="#"
+                  className="block py-2 px-3 text-text-dark-secondary hover:text-text-dark-primary font-medium text-base transition-colors duration-300"
+                  aria-current="page"
+                >
+                  Kategori
+                </Link>
+              </li>
+            </ul>
+          </div>
+          {/* End Navbar */}
         </div>
       </div>
-    </header>
+    </nav>
   );
 }

@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 @import "tailwindcss";
+@import "flowbite";
 @import "./assets/theme.css";
 
 :root {

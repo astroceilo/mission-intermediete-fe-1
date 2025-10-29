@@ -1,66 +1,71 @@
-@theme {
-    /* Main Colors */
-    --color-primary: rgba(62, 207, 76, 1);
-    --color-primary-400: rgba(107, 226, 107, 1);
-    --color-primary-300: rgba(148, 240, 139, 1);
-    --color-primary-200: rgba(192, 250, 180, 1);
-    --color-primary-100: rgba(226, 252, 217, 0.8);
+@layer base {
+    @theme {
+        /* Main Colors */
+        --color-primary: rgba(62, 207, 76, 1);
+        --color-primary-400: rgba(107, 226, 107, 1);
+        --color-primary-300: rgba(148, 240, 139, 1);
+        --color-primary-200: rgba(192, 250, 180, 1);
+        --color-primary-100: rgba(226, 252, 217, 0.8);
 
-    --color-secondary: rgba(255, 189, 58, 1);
-    --color-secondary-400: rgba(255, 210, 107, 1);
-    --color-secondary-300: rgba(255, 223, 136, 1);
-    --color-secondary-200: rgba(255, 236, 176, 1);
-    --color-secondary-100: rgba(255, 247, 215, 0.8);
+        --color-secondary: rgba(255, 189, 58, 1);
+        --color-secondary-400: rgba(255, 210, 107, 1);
+        --color-secondary-300: rgba(255, 223, 136, 1);
+        --color-secondary-200: rgba(255, 236, 176, 1);
+        --color-secondary-100: rgba(255, 247, 215, 0.8);
 
-    --color-tertiary: rgba(246, 73, 32, 1);
-    --color-tertiary-400: rgba(249, 130, 86, 1);
-    --color-tertiary-300: rgba(252, 165, 120, 1);
-    --color-tertiary-200: rgba(254, 202, 165, 1);
-    --color-tertiary-100: rgba(254, 232, 210, 0.8);
+        --color-tertiary: rgba(246, 73, 32, 1);
+        --color-tertiary-400: rgba(249, 130, 86, 1);
+        --color-tertiary-300: rgba(252, 165, 120, 1);
+        --color-tertiary-200: rgba(254, 202, 165, 1);
+        --color-tertiary-100: rgba(254, 232, 210, 0.8);
 
-    /* Text Colors */
-    --color-text-dark-primary: rgba(34, 35, 37, 1);
-    --color-text-dark-secondary: rgba(51, 51, 51, 0.68);
-    --color-text-dark-disabled: rgba(58, 53, 65, 0.38);
-    --color-text-light-primary: rgba(255, 255, 255, 1);
-    --color-text-light-secondary: rgba(193, 194, 196, 1);
-    --color-text-light-disabled: rgba(157, 158, 161, 1);
+        /* Text Colors */
+        --color-text-dark-primary: rgba(34, 35, 37, 1);
+        --color-text-dark-secondary: rgba(51, 51, 51, 0.68);
+        --color-text-dark-disabled: rgba(58, 53, 65, 0.38);
+        --color-text-light-primary: rgba(255, 255, 255, 1);
+        --color-text-light-secondary: rgba(193, 194, 196, 1);
+        --color-text-light-disabled: rgba(157, 158, 161, 1);
 
-    /* Info */
-    --color-info-pressed: rgba(4, 74, 162, 1);
-    --color-info-hover: rgba(6, 99, 194, 1);
-    --color-info-default: rgba(9, 128, 226, 1);
-    --color-info-background: rgba(235, 249, 254, 1);
+        /* Others */
+        --color-other-primarybg: rgba(255, 255, 255, 1);
+        --color-other-basebg: rgba(244, 245, 250, 1);
+        --color-other-secondarybg: rgba(249, 250, 252, 1);
+        --color-other-border: rgba(58, 53, 65, 0.12);
 
-    /* Success */
-    --color-success-pressed: rgba(28, 150, 117, 1);
-    --color-success-hover: rgba(40, 179, 128, 1);
-    --color-success-default: rgba(56, 209, 137, 1);
-    --color-success-background: rgba(224, 253, 223, 1);
+        /* Info */
+        --color-info-pressed: rgba(4, 74, 162, 1);
+        --color-info-hover: rgba(6, 99, 194, 1);
+        --color-info-default: rgba(9, 128, 226, 1);
+        --color-info-background: rgba(235, 249, 254, 1);
 
-    /* Warning */
-    --color-warning-pressed: rgba(181, 164, 13, 1);
-    --color-warning-hover: rgba(216, 198, 19, 1);
-    --color-warning-default: rgba(252, 233, 27, 1);
-    --color-warning-background: rgba(252, 248, 202, 1);
+        /* Success */
+        --color-success-pressed: rgba(28, 150, 117, 1);
+        --color-success-hover: rgba(40, 179, 128, 1);
+        --color-success-default: rgba(56, 209, 137, 1);
+        --color-success-background: rgba(224, 253, 223, 1);
 
-    /* Error */
-    --color-error-pressed: rgba(183, 35, 21, 1);
-    --color-error-hover: rgba(219, 61, 31, 1);
-    --color-error-default: rgba(255, 92, 43, 1);
-    --color-error-background: rgba(252, 227, 209, 1);
+        /* Warning */
+        --color-warning-pressed: rgba(181, 164, 13, 1);
+        --color-warning-hover: rgba(216, 198, 19, 1);
+        --color-warning-default: rgba(252, 233, 27, 1);
+        --color-warning-background: rgba(252, 248, 202, 1);
 
-    /* Gradients */
-    --gradient-info: linear-gradient(90deg, rgba(0, 76, 232, 1), rgba(111, 158, 255, 1));
-    --gradient-success: linear-gradient(90deg, rgba(0, 194, 71, 1) 0%, rgba(115, 255, 166, 1) 100%);
-    --gradient-warning: linear-gradient(90deg, rgba(255, 225, 106, 1) 0%, rgba(255, 229, 128, 0.21) 100%);
-    --gradient-error: linear-gradient(90deg, rgba(255, 51, 51, 1) 0%, rgba(255, 138, 155, 1) 100%);
+        /* Error */
+        --color-error-pressed: rgba(183, 35, 21, 1);
+        --color-error-hover: rgba(219, 61, 31, 1);
+        --color-error-default: rgba(255, 92, 43, 1);
+        --color-error-background: rgba(252, 227, 209, 1);
 
-    --font-sans: Lato, system-ui, sans-serif;
+        /* Gradients */
+        --gradient-info: linear-gradient(90deg, rgba(0, 76, 232, 1), rgba(111, 158, 255, 1));
+        --gradient-success: linear-gradient(90deg, rgba(0, 194, 71, 1) 0%, rgba(115, 255, 166, 1) 100%);
+        --gradient-warning: linear-gradient(90deg, rgba(255, 225, 106, 1) 0%, rgba(255, 229, 128, 0.21) 100%);
+        --gradient-error: linear-gradient(90deg, rgba(255, 51, 51, 1) 0%, rgba(255, 138, 155, 1) 100%);
+    }
 
-    /* Font weights (optional) */
-    --font-weight-regular: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
+    :root {
+        /* Font families */
+        --font-sans: Lato, system-ui, sans-serif;
+    }
 }
