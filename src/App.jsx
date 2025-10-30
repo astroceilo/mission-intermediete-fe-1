@@ -39,8 +39,16 @@ function App() {
             </MainLayout>
           }
         />
-        {/* <Route path="/course/:id" element={<MainLayout bgClass="bg-white"><Course /></MainLayout>} />
-          <Route path="*" element={<NotFound />} /> */}
+        {/* <Route
+          path="/course/:id"
+          element={
+            <MainLayout bgClass="bg-white">
+              <Course />
+              <CourseDetail />
+            </MainLayout>
+          }
+        />
+        <Route path="*" element={<NotFound />} /> */}
       </Routes>
       <Footer />
     </BrowserRouter>

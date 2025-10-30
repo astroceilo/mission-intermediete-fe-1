@@ -1,21 +1,27 @@
+import logo from "../assets/images/logo.png";
+
 export default function Footer() {
   return (
     <footer className="bg-white">
-      <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <div class="space-y-6 sm:grid sm:grid-cols-2 sm:gap-24 sm:space-y-0 items-start">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <div className="space-y-6 sm:grid sm:grid-cols-2 sm:gap-24 sm:space-y-0 items-start">
           {/* Logo & Deskripsi */}
-          <div class="max-w-sm">
-            <div class="flex-1 flex items-center">
-              <a class="flex text-[rgba(62,207,76,1)]" href="index.html">
-                <img src="../../assets/images/logo.png" alt="Logo" />
+          <div className="max-w-sm">
+            <div className="flex-1 flex items-center">
+              <a className="flex text-primary" href="index.html">
+                <img
+                  src={logo}
+                  className="w-[152px] h-[42px] md:w-[237px] md:h-14 object-contain"
+                  alt="Videobelajar Logo"
+                />
               </a>
             </div>
 
             <div>
-              <h1 class="mt-4 font-bold text-lg leading-snug">
+              <h1 className="mt-4 font-bold text-lg leading-snug">
                 Gali Potensi Anda Melalui Pembelajaran Video di hariesok.id!
               </h1>
-              <div class="mt-2 text-base leading-snug text-gray-600 space-y-1">
+              <div className="mt-2 text-base leading-snug text-gray-600 space-y-1">
                 <p>Jl. Usman Effendi No. 50 Lowokwaru, Malang</p>
                 <p>+62-877-7123-1234</p>
               </div>
@@ -24,16 +30,16 @@ export default function Footer() {
           {/* End Deskripsi */}
 
           {/* Menu Footer */}
-          <div class="space-y-4 sm:grid sm:grid-cols-3 sm:gap-12 sm:space-y-0 pr-2">
+          <div className="space-y-4 sm:grid sm:grid-cols-3 sm:gap-12 sm:space-y-0 pr-2">
             {/* Kategori */}
             <div>
               <button
-                class="footer-toggle w-full flex justify-between items-center font-bold text-gray-900 sm:cursor-default group"
+                className="footer-toggle w-full flex justify-between items-center font-bold text-gray-900 sm:cursor-default group"
                 data-target="menu-kategori"
               >
                 Kategori
                 <svg
-                  class="size-5 shrink-0 transition-transform duration-300 sm:hidden group-[.open]:rotate-90"
+                  className="size-5 shrink-0 transition-transform duration-300 sm:hidden group-[.open]:rotate-90"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -50,12 +56,12 @@ export default function Footer() {
 
               <ul
                 id="menu-kategori"
-                class="mt-4 max-h-0 overflow-hidden transition-all duration-500 ease-in-out space-y-4 text-sm sm:max-h-none sm:block"
+                className="mt-4 max-h-0 overflow-hidden transition-all duration-500 ease-in-out space-y-4 text-sm sm:max-h-none sm:block"
               >
                 <li>
                   <a
                     href="#"
-                    class="text-gray-700 transition hover:text-[rgba(255,189,58,1)]"
+                    className="text-gray-700 transition hover:text-secondary"
                   >
                     Digital & Teknologi
                   </a>
@@ -64,7 +70,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    class="text-gray-700 transition hover:text-[rgba(255,189,58,1)]"
+                    className="text-gray-700 transition hover:text-secondary"
                   >
                     Pemasaran
                   </a>
@@ -73,7 +79,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    class="text-gray-700 transition hover:text-[rgba(255,189,58,1)]"
+                    className="text-gray-700 transition hover:text-secondary"
                   >
                     Manajemen Bisnis
                   </a>
@@ -82,7 +88,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    class="text-gray-700 transition hover:text-[rgba(255,189,58,1)]"
+                    className="text-gray-700 transition hover:text-secondary"
                   >
                     Pengembangan Diri
                   </a>
@@ -91,7 +97,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    class="text-gray-700 transition hover:text-[rgba(255,189,58,1)]"
+                    className="text-gray-700 transition hover:text-secondary"
                   >
                     Desain
                   </a>
@@ -103,12 +109,12 @@ export default function Footer() {
             {/* Perusahaan */}
             <div>
               <button
-                class="footer-toggle w-full flex justify-between items-center font-bold text-gray-900 sm:cursor-default group"
+                className="footer-toggle w-full flex justify-between items-center font-bold text-gray-900 sm:cursor-default group"
                 data-target="menu-perusahaan"
               >
                 Perusahaan
                 <svg
-                  class="size-5 shrink-0 transition-transform duration-300 sm:hidden group-[.open]:rotate-90"
+                  className="size-5 shrink-0 transition-transform duration-300 sm:hidden group-[.open]:rotate-90"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -125,12 +131,12 @@ export default function Footer() {
 
               <ul
                 id="menu-perusahaan"
-                class="mt-4 max-h-0 overflow-hidden transition-all duration-500 ease-in-out space-y-4 text-sm sm:max-h-none sm:block"
+                className="mt-4 max-h-0 overflow-hidden transition-all duration-500 ease-in-out space-y-4 text-sm sm:max-h-none sm:block"
               >
                 <li>
                   <a
                     href="#"
-                    class="text-gray-700 transition hover:text-[rgba(255,189,58,1)]"
+                    className="text-gray-700 transition hover:text-secondary"
                   >
                     Tentang Kami
                   </a>
@@ -139,7 +145,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    class="text-gray-700 transition hover:text-[rgba(255,189,58,1)]"
+                    className="text-gray-700 transition hover:text-secondary"
                   >
                     FAQ
                   </a>
@@ -148,7 +154,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    class="text-gray-700 transition hover:text-[rgba(255,189,58,1)]"
+                    className="text-gray-700 transition hover:text-secondary"
                   >
                     Kebijakan & Privasi
                   </a>
@@ -157,7 +163,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    class="text-gray-700 transition hover:text-[rgba(255,189,58,1)]"
+                    className="text-gray-700 transition hover:text-secondary"
                   >
                     Ketentuan Layanan
                   </a>
@@ -166,7 +172,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    class="text-gray-700 transition hover:text-[rgba(255,189,58,1)]"
+                    className="text-gray-700 transition hover:text-secondary"
                   >
                     Bantuan
                   </a>
@@ -178,12 +184,12 @@ export default function Footer() {
             {/* Komunitas */}
             <div>
               <button
-                class="footer-toggle w-full flex justify-between items-center font-bold text-gray-900 sm:cursor-default group"
+                className="footer-toggle w-full flex justify-between items-center font-bold text-gray-900 sm:cursor-default group"
                 data-target="menu-komunitas"
               >
                 Komunitas
                 <svg
-                  class="size-5 shrink-0 transition-transform duration-300 sm:hidden group-[.open]:rotate-90"
+                  className="size-5 shrink-0 transition-transform duration-300 sm:hidden group-[.open]:rotate-90"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -200,12 +206,12 @@ export default function Footer() {
 
               <ul
                 id="menu-komunitas"
-                class="mt-4 max-h-0 overflow-hidden transition-all duration-500 ease-in-out space-y-4 text-sm sm:max-h-none sm:block"
+                className="mt-4 max-h-0 overflow-hidden transition-all duration-500 ease-in-out space-y-4 text-sm sm:max-h-none sm:block"
               >
                 <li>
                   <a
                     href="#"
-                    class="text-gray-700 transition hover:text-[rgba(255,189,58,1)]"
+                    className="text-gray-700 transition hover:text-secondary"
                   >
                     Tips & Sukses
                   </a>
@@ -214,7 +220,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    class="text-gray-700 transition hover:text-[rgba(255,189,58,1)]"
+                    className="text-gray-700 transition hover:text-secondary"
                   >
                     Blog
                   </a>
@@ -227,18 +233,18 @@ export default function Footer() {
         </div>
 
         {/* Sosmed */}
-        <div class="mt-4 sm:mt-8 border-t border-gray-100 pt-6 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <ul class="flex gap-6 order-1 sm:order-2">
+        <div className="mt-4 sm:mt-8 border-t border-gray-100 pt-6 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <ul className="flex gap-6 order-1 sm:order-2">
             <li>
               <a
                 href="#"
                 rel="noreferrer"
                 target="_blank"
-                class="flex items-center justify-center size-10 rounded-full border border-gray-400 text-gray-600 hover:bg-[rgb(255,189,58)] hover:border-none hover:text-white transition"
+                className="flex items-center justify-center size-10 rounded-full border border-gray-400 text-gray-600 hover:bg-[rgb(255,189,58)] hover:border-none hover:text-white transition"
               >
-                <span class="sr-only">LinkedIn</span>
+                <span className="sr-only">LinkedIn</span>
                 <svg
-                  class="size-5"
+                  className="size-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -253,11 +259,11 @@ export default function Footer() {
                 href="#"
                 rel="noreferrer"
                 target="_blank"
-                class="flex items-center justify-center size-10 rounded-full border border-gray-400 text-gray-600 hover:bg-[rgb(255,189,58)] hover:border-none hover:text-white transition"
+                className="flex items-center justify-center size-10 rounded-full border border-gray-400 text-gray-600 hover:bg-[rgb(255,189,58)] hover:border-none hover:text-white transition"
               >
-                <span class="sr-only">Facebook</span>
+                <span className="sr-only">Facebook</span>
                 <svg
-                  class="size-6"
+                  className="size-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -276,11 +282,11 @@ export default function Footer() {
                 href="#"
                 rel="noreferrer"
                 target="_blank"
-                class="flex items-center justify-center size-10 rounded-full border border-gray-400 text-gray-600 hover:bg-[rgb(255,189,58)] hover:border-none hover:text-white transition"
+                className="flex items-center justify-center size-10 rounded-full border border-gray-400 text-gray-600 hover:bg-[rgb(255,189,58)] hover:border-none hover:text-white transition"
               >
-                <span class="sr-only">Instagram</span>
+                <span className="sr-only">Instagram</span>
                 <svg
-                  class="size-6"
+                  className="size-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -299,11 +305,11 @@ export default function Footer() {
                 href="#"
                 rel="noreferrer"
                 target="_blank"
-                class="flex items-center justify-center size-10 rounded-full border border-gray-400 text-gray-600 hover:bg-[rgb(255,189,58)] hover:border-none hover:text-white transition"
+                className="flex items-center justify-center size-10 rounded-full border border-gray-400 text-gray-600 hover:bg-[rgb(255,189,58)] hover:border-none hover:text-white transition"
               >
-                <span class="sr-only">Twitter</span>
+                <span className="sr-only">Twitter</span>
                 <svg
-                  class="size-6"
+                  className="size-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -314,7 +320,7 @@ export default function Footer() {
             </li>
           </ul>
 
-          <p class="text-sm text-gray-500 order-2 sm:order-1">
+          <p className="text-sm text-gray-500 order-2 sm:order-1">
             &copy;2023 Gerobak Sayur. All Rights Reserved.
           </p>
         </div>
