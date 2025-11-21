@@ -227,6 +227,8 @@
       font-family: var(--font-dm);
       font-size: 16px;
       font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: 0.2px;
     }
   
     /* heading other body small */

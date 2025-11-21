@@ -4,7 +4,6 @@ import { lazy, Suspense } from "react";
 import LoadingScreen from "../components/LoadingScreen";
 import MainLayout from "../layouts/MainLayout";
 
-
 const Home = lazy(() => import("../pages/Home"));
 const Products = lazy(() => import("../pages/Products"));
 const ProductDetail = lazy(() => import("../pages/Products/ProductDetail"));
@@ -16,7 +15,7 @@ export default function AppRoutes() {
     <Suspense fallback={<LoadingScreen />}>
       <Routes>
         {/* Public pages */}
-        <Route element={<MainLayout />}>
+        <Route element={<MainLayout bgClass="bg-[rgba(255,253,243)]" />}>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<ProductDetail />} />
