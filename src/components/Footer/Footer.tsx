@@ -31,20 +31,20 @@ export default function Footer() {
 
             {/* Information */}
             <div className="w-fit flex flex-col gap-2 md:gap-3">
-              <p className="text-other-body-small-h1 md:text-lg md:font-bold text-text-dark-primary">
+              <p className="font-dm font-bold text-sm md:text-lg leading-[1.4] tracking-[0.2px] text-text-dark-primary">
                 Gali Potensi Anda Melalui Pembelajaran Video di hariesok.id!
               </p>
-              <p className="text-other-body-small-h4 md:text-base md:font-normal text-text-dark-primary">
+              <p className="font-dm font-normal text-sm md:text-base leading-[1.4] tracking-[0.2px] text-text-dark-primary">
                 Jl. Usman Effendi No. 50 Lowokwaru, Malang
               </p>
-              <p className="text-other-body-small-h4 md:text-base md:font-normal text-text-dark-primary">
+              <p className="font-dm font-normal text-sm md:text-base leading-[1.4] tracking-[0.2px] text-text-dark-primary">
                 +62-877-7123-1234
               </p>
             </div>
           </div>
 
           {/* Right or Accordion */}
-          <div className="w-full flex flex-col justify-items-normal md:items-start justify-end md:flex-row gap-3 md:gap-12">
+          <div className="w-full flex flex-col justify-items-normal md:items-start justify-end md:flex-row gap-3 md:gap-6 lg:gap-12">
             {/* Menu Items */}
             {footerSections.map((section, index) => (
               <FooterAccordion
@@ -69,7 +69,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="flex flex-col items-start md:flex-row md:items-center md:justify-between gap-3 md:gap-0">
           {/* Copyright */}
-          <span className="text-sm md:text-base font-normal text-text-dark-secondary order-2 md:order-1">
+          <span className="text-other-body-medium-h3 text-text-dark-secondary order-2 md:order-1">
             &copy;2023 Gerobak Sayur. All Rights Reserved.
           </span>
 

@@ -29,7 +29,7 @@ export default function FooterAccordion({
       {/* Title */}
       <button
         onClick={() => !isDesktop && onToggle()}
-        className="w-full flex justify-between items-center text-base font-bold text-text-dark-primary group"
+        className="w-full flex justify-between items-center text-other-body-medium-h1 text-text-dark-primary group"
       >
         {title}
         {!isDesktop && (
@@ -44,7 +44,7 @@ export default function FooterAccordion({
 
       {/* Links */}
       {isDesktop ? (
-        <ul className="flex flex-col text-sm md:text-base gap-[13px] text-text-dark-secondary">
+        <ul className="flex flex-col text-other-body-medium-h3 gap-[13px] text-text-dark-secondary">
           {links.map((link, index) => (
             <li key={index}>
               <Link
@@ -65,7 +65,7 @@ export default function FooterAccordion({
               animate={{ opacity: 1, y: 0, height: "auto" }}
               exit={{ opacity: 0, y: -8, height: 0 }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="flex flex-col text-sm md:text-base gap-[13px] text-text-dark-secondary overflow-hidden"
+              className="flex flex-col text-other-body-medium-h3 gap-[13px] text-text-dark-secondary overflow-hidden"
             >
               {links.map((link, index) => (
                 <li key={index}>
