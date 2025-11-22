@@ -27,7 +27,7 @@ export default function Header() {
           <span className="sr-only">Home</span>
           <img
             src={logo}
-            className="w-[152px] h-[42px] md:w-[237px] md:h-14 object-contain"
+            className="w-[152px] h-[42px] md:w-[194.5px]! md:h-12! lg:w-[237px]! lg:h-14! object-contain"
             alt="Videobelajar Logo"
           />
         </Link>
