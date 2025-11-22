@@ -1,4 +1,4 @@
-export const formatPrice = (value) => {
+export const formatPrice = (value: number) => {
     if (!value || isNaN(value)) return "Rp 0";
 
     if (value >= 1_000_000) {
@@ -13,7 +13,7 @@ export const formatPrice = (value) => {
     }
 };
 
-export function getFinalPrice(price) {
+export function getFinalPrice(price: number | { original: number; discounted?: number }) {
     if (typeof price === "number") {
         return {
             final: price,
