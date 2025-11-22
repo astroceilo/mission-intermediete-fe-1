@@ -1,28 +1,41 @@
-import { createContext, useContext, useEffect, useState, type ReactNode, } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  type ReactNode,
+} from "react";
 
-
-interface User {
-  name: string;
+export interface User {
+  id: string;
+  fullName: string;
   email: string;
+  gender: string;
+  phone: string;
+  password: string;
+  photo: string | null;
 }
 
 interface AuthContextType {
   isLoggedIn: boolean;
-  login: (user: any) => void;
+  user: User | null;
+  login: (user: User) => void;
   logout: () => void;
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+  const [user, setUser] = useState<User | null>(() => {
     try {
       const saved = localStorage.getItem("loggedInUser");
-      return saved ? JSON.parse(saved) !== null : false;
+      return saved ? JSON.parse(saved) : null;
     } catch {
-      return false;
+      return null;
     }
   });
+
+  const [isLoggedIn, setIsLoggedIn] = useState(() => !!user);
 
   useEffect(() => {
     const handleStorageChange = () => {
@@ -32,18 +45,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
-  const login = (user: User) => {
-    localStorage.setItem("loggedInUser", JSON.stringify(user));
+  const login = (u: User) => {
+    localStorage.setItem("loggedInUser", JSON.stringify(u));
+    setUser(u);
     setIsLoggedIn(true);
   };
 
   const logout = () => {
     localStorage.removeItem("loggedInUser");
+    setUser(null);
     setIsLoggedIn(false);
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
+    <AuthContext.Provider value={{ isLoggedIn, user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

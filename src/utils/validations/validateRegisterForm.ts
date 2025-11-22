@@ -1,8 +1,28 @@
 import { isValidPhoneNumber } from 'react-phone-number-input';
+
 import { isPasswordStrong, isPasswordMatch } from "./passwordValidation";
 
-export const validateRegisterForm = (name, value, form = {}) => {
-    let errorMsg = "";
+
+interface RegisterForm {
+  fullName?: string;
+  email?: string;
+  gender?: string;
+  phone?: string;
+  password?: string;
+  confirmPassword?: string;
+}
+
+type ValidationError = string | string[];
+
+type PasswordCheckKey =
+  | "minLength"
+  | "hasUpper"
+  | "hasLower"
+  | "hasNumber"
+  | "hasSymbol";
+
+export const validateRegisterForm = (name: string, value: string, form: RegisterForm = {}): ValidationError => {
+    let errorMsg: ValidationError = "";
 
     switch (name) {
         case "fullName":
@@ -44,7 +64,7 @@ export const validateRegisterForm = (name, value, form = {}) => {
 
                 const check = isPasswordStrong(value);
 
-                const messages = {
+                const messages: Record<PasswordCheckKey, string> = {
                     minLength: "At least 8 characters.",
                     hasUpper: "Contains an uppercase letter.",
                     hasLower: "Contains a lowercase letter.",
@@ -53,12 +73,11 @@ export const validateRegisterForm = (name, value, form = {}) => {
                 };
 
                 // ambil semua pesan yang gagal
-                const failedMessages = Object.keys(messages)
+                const failedMessages = (Object.keys(messages) as PasswordCheckKey[])
                     .filter((key) => !check[key])
                     .map((key) => messages[key]);
 
                 if (failedMessages.length > 0) {
-                    // errorMsg = failedMessages.join(" ");
                     errorMsg = failedMessages;
                 }
             }
@@ -67,7 +86,7 @@ export const validateRegisterForm = (name, value, form = {}) => {
         case "confirmPassword":
             if (!value) {
                 errorMsg = "Please confirm your password.";
-            } else if (!isPasswordMatch(form.password, value))
+            } else if (!isPasswordMatch(form.password ?? "", value))
                 errorMsg = "Password and confirmation do not match.";
             break;
 

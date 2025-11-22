@@ -5,13 +5,7 @@ import { Eye, EyeOff } from "lucide-react";
 import { toast } from "react-toastify";
 
 import { validateLoginForm } from "../../utils/validations/validateLoginForm";
-import { useAuth } from "../../context/AuthContext";
-
-
-type User = {
-  email: string;
-  password: string;
-};
+import { useAuth, type User } from "../../context/AuthContext";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -63,17 +57,17 @@ export default function Login() {
     }
 
     // Cek apakah email sudah terdaftar
-    const user = existingUsers.find(
+    const foundUser = existingUsers.find(
       (u: User) => u.email.toLowerCase() === form.email.toLowerCase()
     );
 
-    if (!user) {
+    if (!foundUser) {
       toast.warning("Email belum terdaftar, silakan register.");
       return;
     }
 
     // Cek password cocok atau tidak
-    if (user.password.trim() !== form.password.trim()) {
+    if (foundUser.password.trim() !== form.password.trim()) {
       toast.error("Password salah!");
       return;
     }
@@ -88,7 +82,7 @@ export default function Login() {
 
       // Simpan data login
       // localStorage.setItem("loggedInUser", JSON.stringify(user));
-      login(user);
+      login(foundUser);
 
       // Delay sedikit biar user lihat notifikasi dulu
       setTimeout(() => navigate("/"), 1200);
@@ -132,7 +126,13 @@ export default function Login() {
                   errors.email
                     ? "border-red-500 focus:ring-red-400"
                     : "border-other-border focus:ring-primary-400"
-                }`}
+                }
+                ${
+                  form.email === ""
+                    ? "placeholder:text-text-dark-disabled text-text-dark-disabled"
+                    : "text-text-dark-primary"
+                }
+                `}
                 required
               />
               {/* Error Message */}
@@ -160,7 +160,13 @@ export default function Login() {
                     errors.password
                       ? "border-red-500 focus:ring-red-400"
                       : "border-other-border focus:ring-primary-400"
-                  }`}
+                  }
+                  ${
+                    form.password === ""
+                      ? "placeholder:text-text-dark-disabled text-text-dark-disabled"
+                      : "text-text-dark-primary"
+                  }
+                  `}
                   required
                 />
 
@@ -208,7 +214,7 @@ export default function Login() {
             {/* Button Login */}
             <button
               type="submit"
-              className="w-full rounded-[10px] bg-main-primary hover:bg-transparent py-2.5 px-[26px] font-dm font-bold text-sm md:text-base! leading-[1.4] tracking-[0.2px] text-text-light-primary hover:text-main-primary border border-main-primary transition cursor-pointer"
+              className="w-full rounded-[10px] text-center bg-main-primary hover:bg-transparent py-2.5 px-[26px] font-dm font-bold text-sm md:text-base! leading-[1.4] tracking-[0.2px] text-text-light-primary hover:text-main-primary border border-main-primary transition cursor-pointer"
             >
               Masuk
             </button>
@@ -216,7 +222,7 @@ export default function Login() {
             {/* Button Register */}
             <Link
               to="/register"
-              className="w-full rounded-[10px] text-center bg-main-primary-100 hover:bg-transparent py-2.5 px-[26px] font-dm font-bold text-sm md:text-base! leading-[1.4] tracking-[0.2px] text-main-primary hover:text-main-primary border border-transparent hover:border-main-primary transition"
+              className="w-full rounded-[10px] text-center bg-main-primary-100 hover:bg-transparent py-2.5 px-[26px] font-dm font-bold text-sm md:text-base! leading-[1.4] tracking-[0.2px] text-main-primary hover:text-main-primary border border-transparent hover:border-main-primary transition cursor-pointer"
             >
               Daftar
             </Link>

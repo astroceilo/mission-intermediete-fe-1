@@ -5,7 +5,6 @@ import LoadingScreen from "../components/LoadingScreen";
 import MainLayout from "../layouts/MainLayout";
 import AuthLayout from "../layouts/AuthLayout";
 
-
 const Home = lazy(() => import("../pages/Home"));
 const Products = lazy(() => import("../pages/Products"));
 const ProductDetail = lazy(() => import("../pages/Products/ProductDetail"));
