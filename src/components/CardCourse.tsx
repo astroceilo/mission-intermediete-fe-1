@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { getFinalPrice } from "../utils/price";
 import RatingStars from "./RatingStars";
 
-
 interface Instructor {
   name?: string;
   profile_image?: string;
@@ -12,7 +11,7 @@ interface Instructor {
 }
 
 interface Price {
-  original?: number;
+  original: number;
   discount?: number;
 }
 
@@ -46,7 +45,7 @@ export default function CardCourse({ course }: CardCourseProps) {
     thumbnail,
     description = "",
     instructor = {},
-    price = {},
+    price = null,
     rating = {},
   } = course;
 

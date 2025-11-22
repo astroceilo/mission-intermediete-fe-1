@@ -13,7 +13,23 @@ export const formatPrice = (value: number) => {
     }
 };
 
-export function getFinalPrice(price: number | { original: number; discounted?: number }) {
+export function getFinalPrice(
+    price: number | { original: number; discounted?: number } | null
+) {
+    // Jika null → return default
+    if (price === null) {
+        return {
+            final: 0,
+            hasDiscount: false,
+            original: 0,
+            formatted: {
+                original: formatPrice(0),
+                final: formatPrice(0),
+            },
+        };
+    }
+
+    // Jika number → simple price tanpa diskon
     if (typeof price === "number") {
         return {
             final: price,
@@ -26,10 +42,11 @@ export function getFinalPrice(price: number | { original: number; discounted?: n
         };
     }
 
-    const original = price?.original || 0;
-    const discounted = price?.discounted || null;
+    // Jika object dengan original & discounted
+    const original = price.original ?? 0;
+    const discounted = price.discounted ?? null;
 
-    const hasDiscount = discounted && discounted < original;
+    const hasDiscount = discounted !== null && discounted < original;
     const final = hasDiscount ? discounted : original;
 
     return {
@@ -42,3 +59,4 @@ export function getFinalPrice(price: number | { original: number; discounted?: n
         },
     };
 }
+
