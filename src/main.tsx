@@ -4,6 +4,7 @@ import "flowbite";
 import { createRoot } from "react-dom/client";
 import { StrictMode } from "react";
 
+import { AuthProvider } from "./context/AuthContext";
 // import { makeServer } from "./lib/mirage/server";
 import App from "./App";
 
@@ -14,6 +15,8 @@ import App from "./App";
 
 createRoot(document.getElementById("root") as HTMLElement).render(
   <StrictMode>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </StrictMode>
 );

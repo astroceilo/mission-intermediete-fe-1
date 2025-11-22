@@ -3,6 +3,8 @@ import { lazy, Suspense } from "react";
 
 import LoadingScreen from "../components/LoadingScreen";
 import MainLayout from "../layouts/MainLayout";
+import AuthLayout from "../layouts/AuthLayout";
+
 
 const Home = lazy(() => import("../pages/Home"));
 const Products = lazy(() => import("../pages/Products"));
@@ -22,8 +24,10 @@ export default function AppRoutes() {
         </Route>
 
         {/* Auth pages */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route element={<AuthLayout bgClass="bg-[rgba(255,253,243)]" />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Route>
       </Routes>
     </Suspense>
   );

@@ -1,6 +1,7 @@
 import { isPasswordStrong } from "./passwordValidation";
 
-export const validateLoginForm = (name, value) => {
+
+export const validateLoginForm = (name: string, value: string) => {
     let errorMsg = "";
 
     switch (name) {

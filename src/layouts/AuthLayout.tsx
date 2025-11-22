@@ -8,11 +8,13 @@ export default function AuthLayout({ bgClass }: { bgClass?: string }) {
     <>
       <Header />
 
-      <main
-        className={`min-h-screen mx-auto max-w-[1440px] ${bgClass} px-5 md:px-10! lg:px-[120px]! py-7 md:py-12! lg:py-16!`}
+      <div
+        className={`min-h-screen w-full flex items-center justify-center ${bgClass}`}
       >
-        <Outlet />
-      </main>
+        <main className="mx-auto max-w-[1440px] w-full flex flex-col items-center gap-6 md:gap-12! lg:gap-16! px-5 md:px-10! lg:px-[120px]! py-7 md:py-12! lg:py-16!">
+          <Outlet />
+        </main>
+      </div>
     </>
   );
 }

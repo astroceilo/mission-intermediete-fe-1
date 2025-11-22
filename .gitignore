@@ -25,3 +25,5 @@ dist-ssr
 
 # temporary
 lib/
+Register.tsx
+Dropdown/
